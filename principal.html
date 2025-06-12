@@ -93,24 +93,32 @@
     }
 
     /* Estilo do contador e data do casamento */
-    #tempo-juntos {
+    #tempo-juntos, #data-casamento {
       font-size: 1.2rem;
       font-weight: bold;
       color: #b30059;
-      background: rgba(255, 204, 204, 0.3);
+      background: rgba(255, 204, 204, 0.5);
       padding: 15px;
-      border-radius: 10px;
+      border-radius: 20px;
       margin: 20px auto;
       max-width: 90%;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      position: relative;
     }
 
     #data-casamento {
       font-size: 1.1rem;
       font-style: italic;
       color: #a00050;
-      margin: 10px auto;
-      max-width: 90%;
+    }
+
+    /* Efeito de Fade-In */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h1, p, img {
+      animation: fadeIn 1s ease-in;
     }
 
     /* Melhoria para celular */
@@ -191,14 +199,17 @@
       const minutos = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
       const segundos = Math.floor((diff % (1000 * 60)) / 1000);
 
-      document.getElementById('tempo-juntos').innerText = 
-        `Casados há ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos ❤️`;
+      document.getElementById('tempo-juntos').innerHTML = 
+        `<span style="font-size: 1.5rem;">💖</span> Casados há ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos `;
     }
 
     // Atualiza o contador a cada segundo
     updateCounter();
     setInterval(updateCounter, 1000);
   </script>
+
+  <!-- Botão para Voltar -->
+  <a href="index.html" class="btn">Voltar ao Início 💖</a>
 
   <div class="hearts">
     <script>
