@@ -34,7 +34,7 @@
     .btn {
       background: linear-gradient(45deg, #ff66b2, #ff3399, #ff66b2);
       background-size: 300% 300%;
-      animation: shine 3s infinite;
+      animation: shine 3s infinite, pulse 2s infinite; /* Combina shine e pulse */
       color: white;
       border: none;
       padding: 15px 40px;
@@ -44,12 +44,13 @@
       cursor: pointer;
       text-decoration: none;
       box-shadow: 0 0 20px #ff99cc;
-      transition: transform 0.3s ease;
-      animation: pulse 2s infinite; /* Efeito pulsante adicionado */
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .btn:hover {
-      transform: scale(1.05);
+      transform: scale(1.05); /* Mantém o efeito de hover */
     }
 
     @keyframes shine {
@@ -124,12 +125,12 @@
       }
     }
 
-    /* Efeito de Fade-In */
+    /* Efeito de Fade-In apenas para h1 e p */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    h1, p, .btn {
+    h1, p {
       animation: fadeIn 1s ease-in;
     }
 
@@ -165,7 +166,7 @@
 <body>
   <h1>Bem vinda ! 💖</h1>
   <p>Espero que goste da surpresa que preparei com todo meu carinho!</p>
-  <a href="principal.html" class="btn">💝 Ver surpresa 💝</a>
+  <a href="principal.html" class="btn"><span style="font-size: 1.5rem;">💖</span> Ver surpresa</a>
 
   <div class="hearts">
     <script>
