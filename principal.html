@@ -7,7 +7,7 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Segoe UI';, sans-serif;
       background: linear-gradient(to bottom, #ffe6f0, #fff);
       overflow-x: hidden;
       color: #b30059;
@@ -15,23 +15,24 @@
     }
 
     h1 {
-      margin-top: 60px;
+      margin-top: 20px;
       font-size: 2.5rem;
     }
 
     p {
-      max-width: 90%;
-      margin: 10px auto 40px auto;
+      max-width: 95%;;
+      margin: 10px auto;
       font-size: 1.2rem;
     }
 
     img {
-      width: 80%;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      margin-top: 40px;
+      max-width: 100%;
+      width: 90%;;
+      border-radius: 20px;
+      margin: 15px auto;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
     }
-
+    
     .hearts {
       position: fixed;
       top: 0;
@@ -40,7 +41,7 @@
       height: 100%;
       pointer-events: none;
       overflow: hidden;
-      z-index: 999;
+      z-index: -1;
     }
 
     .heart {
@@ -77,9 +78,7 @@
         transform: translateY(100vh) rotate(45deg);
         opacity: 0;
       }
-      30% {
-        opacity: 1;
-      }
+      30% { opacity: 1; }
       100% {
         transform: translateY(-10vh) rotate(45deg);
         opacity: 0;
@@ -87,7 +86,7 @@
     }
 
     .footer {
-      margin: 60px 0;
+      margin: 40px 0;
       font-weight: bold;
       font-size: 1.1rem;
     }
@@ -98,12 +97,12 @@
       font-weight: bold;
       color: #b30059;
       background: rgba(255, 204, 204, 0.5);
-      padding: 15px;
+      padding: 12px;
       border-radius: 20px;
-      margin: 20px auto;
-      max-width: 90%;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      position: relative;
+      margin: 15px auto;
+      max-width: 95%;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+      text-align: center;
       animation: pulse 2s infinite;
     }
 
@@ -120,9 +119,39 @@
       background: rgba(255, 204, 204, 0.5);
       padding: 10px;
       border-radius: 20px;
-      margin: 20px auto;
-      max-width: 90%;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      margin: 15px auto;
+      max-width: 95%;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    .btn {
+      background: linear-gradient(45deg, #ff66b2, #ff3399, #ff66b2);
+      background-size: 300% 300%;
+      animation: shine 3s infinite, pulse 2s infinite;
+      color: white;
+      border: none;
+      padding: 12px 35px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 0 15px #ff99cc;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 15px auto;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes shine {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     /* Efeito de Fade-In */
@@ -141,30 +170,45 @@
 
     @media (max-width: 600px) {
       h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin-top: 15px;
       }
       p {
-        font-size: 1rem;
+        font-size: 0.9rem;
+        margin: 8px auto;
       }
       img {
-        width: 90%;
+        width: 95%;
+        margin: 10px auto;
+      }
+      .footer {
+        font-size: 0.9rem;
+        margin: 30px 0;
       }
       #tempo-juntos {
-        font-size: 1rem;
+        font-size: 0.9rem;
         padding: 10px;
+        margin: 10px auto;
       }
       #data-casamento {
+        font-size: 0.8rem;
+        padding: 8px;
+        margin: 10px auto;
+      }
+      .btn {
+        padding: 10px 25px;
         font-size: 0.9rem;
+        margin: 10px auto;
       }
       .heart, .heart::before, .heart::after {
-        width: 15px;
-        height: 15px;
+        width: 10px;
+        height: 10px;
       }
       .heart::before {
-        top: -7.5px;
+        top: -5px;
       }
       .heart::after {
-        left: -7.5px;
+        left: -5px;
       }
     }
   </style>
@@ -198,7 +242,7 @@
   <p>O dia em que dissemos “sim” ao amor, à vida, e a nós dois para sempre. 💍</p>
 
   <!-- MENSAGEM ESPECIAL DE DIA DOS NAMORADOS -->
-  <p style="max-width: 90%; margin: 50px auto 30px auto; font-size: 1.1rem; font-style: italic; color: #a00050;">
+  <p style="max-width: 95%; margin: 30px auto 20px auto; font-size: 1rem; font-style: italic; color: #a00050;">
     Minha namorada, esposa e companheira...<br>
     Neste Dia dos Namorados, eu só quero te agradecer por ser esse amor tão forte, doce e verdadeiro.<br>
     Cada passo ao seu lado faz a vida valer a pena. <br>
@@ -213,7 +257,7 @@
   <p id="data-casamento">Nosso casamento: 23/04/2022</p>
   <script>
     function updateCounter() {
-      const inicio = new Date('2022-04-23T00:00:00'); // Data do casamento
+      const inicio = new Date('2022-04-23T00:00:00');
       const agora = new Date();
       const diff = agora - inicio;
 
@@ -223,21 +267,21 @@
       const segundos = Math.floor((diff % (1000 * 60)) / 1000);
 
       document.getElementById('tempo-juntos').innerHTML = 
-        `<span style="font-size: 1.5rem;">💖</span> Casados há ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos `;
+        `<span style="font-size: 1.3rem;">💖</span> Casados há ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos `;
     }
 
-    // Atualiza o contador a cada segundo
     updateCounter();
     setInterval(updateCounter, 1000);
   </script>
 
   <!-- Botão para Voltar -->
-  <a href="index.html" class="btn">Voltar ao Início 💖</a>
-
+  <a href="index.html" class="btn"><span style="font-size: 1.3rem;">💖</span> Voltar ao Início</a>
 
   <div class="hearts">
     <script>
-      for (let i = 0; i < 40; i++) {
+      const isMobile = window.innerWidth <= 600;
+      const heartCount = isMobile ? 15 : 40; // Menos corações no celular
+      for (let i = 0; i < heartCount; i++) {
         const heart = document.createElement('div');
         heart.classList.add('heart');
         heart.style.left = Math.random() * 100 + 'vw';
