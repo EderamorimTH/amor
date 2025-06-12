@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para a minha Evellyn ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #ffe6f0, #fff);
+      overflow-x: hidden;
+      color: #b30059;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 60px;
+      font-size: 2.5rem;
+    }
+
+    p {
+      max-width: 90%;
+      margin: 10px auto 40px auto;
+      font-size: 1.2rem;
+    }
+
+    img {
+      width: 80%;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      margin-top: 40px;
+    }
+
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .heart {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      background: red;
+      transform: rotate(45deg);
+      animation: floatUp 8s infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      width: 20px;
+      height: 20px;
+      background: red;
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 0;
+      }
+      30% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    .footer {
+      margin: 60px 0;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Feliz Dia dos Namorados, Evellyn 💖</h1>
+  <p>Uma pequena homenagem para o grande amor da minha vida...</p>
+
+  <img src="imagens/ano novo.jpg" alt="Ano Novo">
+  <p>Nosso primeiro ano novo juntos — e eu só conseguia pensar em como quero todos os outros ao seu lado. 🎆</p>
+
+  <img src="imagens/casamento.jpg" alt="Casamento">
+  <p>O dia em que dissemos “sim” ao amor, à vida, e a nós dois para sempre. 💍</p>
+
+  <img src="imagens/chá do miguel.jpg" alt="Chá do Miguel">
+  <p>Esperar por ele ao seu lado foi mágico... e te ver como mãe é o maior presente. 👶</p>
+
+  <img src="imagens/família natal.jpg" alt="Natal em família">
+  <p>Nosso Natal com amor e união. Com você, minha família está completa. 🎄</p>
+
+  <img src="imagens/linda.jpg" alt="Linda">
+  <p>Esse sorriso ilumina os meus dias. Você é linda por dentro e por fora. ✨</p>
+
+  <img src="imagens/medico.jpg" alt="Médico">
+  <p>Mesmo cansada, você é luz. A mulher mais forte e dedicada que conheço. ❤️‍🩹</p>
+
+  <img src="imagens/teatro.jpg" alt="Teatro">
+  <p>Rimos, nos emocionamos... cada momento ao seu lado é inesquecível. 🎭</p>
+
+  <img src="imagens/viagem.jpg" alt="Viagem">
+  <p>Viajar contigo é descobrir o mundo — e me redescobrir no seu amor. 🌍</p>
+
+  <div class="footer">Com amor, Eder 💌</div>
+
+  <div class="hearts">
+    <script>
+      for (let i = 0; i < 40; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDelay = Math.random() * 8 + 's';
+        heart.style.opacity = Math.random();
+        document.querySelector('.hearts').appendChild(heart);
+      }
+    </script>
+  </div>
+</body>
+</html>
