@@ -91,46 +91,114 @@
       font-weight: bold;
       font-size: 1.1rem;
     }
+
+    /* Estilo do contador e data do casamento */
+    #tempo-juntos {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #b30059;
+      background: rgba(255, 204, 204, 0.3);
+      padding: 15px;
+      border-radius: 10px;
+      margin: 20px auto;
+      max-width: 90%;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #data-casamento {
+      font-size: 1.1rem;
+      font-style: italic;
+      color: #a00050;
+      margin: 10px auto;
+      max-width: 90%;
+    }
+
+    /* Melhoria para celular */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+      img {
+        width: 90%;
+      }
+      #tempo-juntos {
+        font-size: 1rem;
+        padding: 10px;
+      }
+      #data-casamento {
+        font-size: 0.9rem;
+      }
+    }
   </style>
 </head>
 <body>
   <h1>Feliz Dia dos Namorados, Meu Amor 💖</h1>
   <p>Uma pequena homenagem para o grande amor da minha vida...</p>
 
-  <img src="imagens/ano novo.jpg" alt="Ano Novo">
+  <img src="imagens/ano novo.jpg" alt="Foto de nós dois sorrindo na virada do ano com fogos ao fundo">
   <p> Mais um ano novo juntos — e eu só conseguia pensar em como quero todos os outros ao seu lado. 🎆</p>
 
-  <img src="imagens/Miguel.jpg" alt="Miguel">
+  <img src="imagens/Miguel.jpg" alt="Nós dois esperando pelo Miguel, cheios de amor">
   <p>Esperar por ele ao seu lado foi mágico... e te ver como mãe é o maior presente. 👶</p>
 
-  <img src="imagens/Natal.jpg" alt="Natal">
+  <img src="imagens/Natal.jpg" alt="Nosso Natal juntos, com a família unida">
   <p>Nosso Natal com amor e união. Com você, minha família está completa. 🎄</p>
 
-  <img src="imagens/linda.jpg" alt="Linda">
+  <img src="imagens/linda.jpg" alt="Você sorrindo, iluminando tudo ao seu redor">
   <p>Esse sorriso ilumina os meus dias. Você é linda por dentro e por fora. ✨</p>
 
-  <img src="imagens/medico.jpg" alt="Médico">
+  <img src="imagens/medico.jpg" alt="Você como médica, sempre dedicada e forte">
   <p>Mesmo cansada, você é luz. A mulher mais forte e dedicada que conheço. ❤️‍🩹</p>
 
-  <img src="imagens/teatro.jpg" alt="Teatro">
+  <img src="imagens/teatro.jpg" alt="Nós no teatro, rindo e nos emocionando juntos">
   <p>Rimos, nos emocionamos... cada momento ao seu lado é inesquecível. 🎭</p>
 
-  <img src="imagens/viagem.jpg" alt="Viagem">
+  <img src="imagens/viagem.jpg" alt="Nós em uma viagem, explorando o mundo juntos">
   <p>Viajar contigo é descobrir o mundo — e me redescobrir no seu amor. 🌍</p>
 
-  <img src="imagens/casamento.jpg" alt="Casamento">
+  <img src="imagens/casamento.jpg" alt="Nosso casamento, o dia em que dissemos sim para sempre">
   <p>O dia em que dissemos “sim” ao amor, à vida, e a nós dois para sempre. 💍</p>
 
   <!-- MENSAGEM ESPECIAL DE DIA DOS NAMORADOS -->
-  <p style="max-width: 90%; margin: 50px auto 30px auto; font-size: 0.88rem; font-style: italic; color: #a00050;">
+  <p style="max-width: 90%; margin: 50px auto 30px auto; font-size: 1.1rem; font-style: italic; color: #a00050;">
     Minha namorada, esposa e companheira...<br>
     Neste Dia dos Namorados, eu só quero te agradecer por ser esse amor tão forte, doce e verdadeiro.<br>
     Cada passo ao seu lado faz a vida valer a pena. <br>
     Que venham todos os dias — bons ou difíceis — contanto que eu esteja com você.<br>
-    Te amo com tudo o que sou, hoje e para sempre. ❤️
+    Te tarde com tudo o que sou, hoje e para sempre. ❤️
   </p>
 
   <div class="footer">Com amor, Eder Amorim 💌</div>
+
+  <!-- Contador Dinâmico e Data do Casamento -->
+  <p id="tempo-juntos"></p>
+  <p id="data-casamento">Nosso casamento: 23/04/2022</p>
+  <script>
+    function updateCounter() {
+      const inicio = new Date('2022-04-23T00:00:00'); // Data do casamento
+      const agora = new Date();
+      const diff = agora - inicio;
+
+      const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('tempo-juntos').innerText = 
+        `Casados há ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos ❤️`;
+    }
+
+    // Atualiza o contador a cada segundo
+    updateCounter();
+    setInterval(updateCounter, 1000);
+  </script>
 
   <div class="hearts">
     <script>
